@@ -70,7 +70,7 @@ public class MathPopup : MonoBehaviour
 
     private void GenerateQuestion () {
 
-        OperandsAnswer[] questions = new OperandsAnswer[3];
+        OperandsAnswer[] questions = new OperandsAnswer[3]; 
         float rand = Random.Range(0.0f, 1.0f);
         if(rand < 0.25)
         {
