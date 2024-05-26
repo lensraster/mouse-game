@@ -21,40 +21,99 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/AddMissionButton.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2ae64d0eaec8d6f4f9436fce6117048d
     m_Address: Trash Cat
     m_ReadOnly: 0
     m_SerializedLabels:
     - characters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2bfa18892388236498842bbfe7a3ff83
     m_Address: Assets/Prefabs/UI/Header.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 473ffa016efe3724cad08daa78e3d12a
     m_Address: Rubbish Raccoon
     m_ReadOnly: 0
     m_SerializedLabels:
     - characters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71514012df4dcd146957cb145cec8287
     m_Address: Assets/Prefabs/UI/MissionEntry.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 94cb557246c11d14388842cc08be79a8
     m_Address: Assets/Prefabs/UI/PowerupIcon.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a53fe2875371488408daf0df7d69a981
     m_Address: Assets/Prefabs/UI/MissionPopup.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: abafe3707f9235b4ab7cdfd1333295c3
     m_Address: Assets/Prefabs/UI/ItemEntry.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ac361d43768a861498da8046b83b94f5
     m_Address: Assets/Prefabs/UI/Score.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 678d462d33ebdd7419400a9476bf6759
+    m_Address: Assets/Scenes/Main.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66b8e0d49d006dd4cb32d8b0fa444728
+    m_Address: Assets/Scenes/Start.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c81bf86fb95a26446ae42f499fcbc766
+    m_Address: Assets/Scenes/Shop.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
+    m_Address: Assets/Scenes/SampleScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fc1e604c9dbb0241aefbfba2563b297
+    m_Address: Assets/Scenes/RatRT.renderTexture
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38bda6f3030e73d4785e813cab2a33d4
+    m_Address: Assets/Shaders/CurvedCode.cginc
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0999d58022e15764c9c7f1db616452d4
+    m_Address: Assets/Shaders/CurvedRotation.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9ac761e73263dc46b8b27826e86ee14
+    m_Address: Assets/Shaders/UnlitBlinking.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d63f5eb2904b2b346afd16ebb961ff06
+    m_Address: Assets/Shaders/VertexColor.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 516be8166ab3bd44a9c6dce62765f6d1
+    m_Address: Assets/Shaders/VertexColorSwizzle.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
   m_SchemaSet:
