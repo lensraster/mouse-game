@@ -2885,7 +2885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: the
+  m_Text: and
 --- !u!222 &1801832939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3389,9 +3389,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.06
-  m_Text: 'SAVE
+  m_Text: 'Cheese
 
-    CHESE'
+    Trains'
 --- !u!222 &2012531554
 CanvasRenderer:
   m_ObjectHideFlags: 0
