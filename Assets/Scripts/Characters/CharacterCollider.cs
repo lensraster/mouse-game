@@ -34,6 +34,7 @@ public class CharacterCollider : MonoBehaviour
 	[Header("Sound")]
 	public AudioClip coinSound;
 	public AudioClip premiumSound;
+	public AudioClip fartSound;
 
     public DeathEvent deathData { get { return m_DeathData; } }
     public new BoxCollider collider { get { return m_Collider; } }
@@ -151,6 +152,7 @@ public class CharacterCollider : MonoBehaviour
             else
             {
 				mathPopup.gameObject.SetActive(true);
+                m_Audio.PlayOneShot(fartSound);
             }
 
             controller.character.animator.SetTrigger(s_HitHash);
