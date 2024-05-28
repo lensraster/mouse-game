@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossFightController : MonoBehaviour
 {
+    Transform child;
     Animator animator;
     int quantity;
     void Start()
     {
+        child = transform.GetChild(0);
         quantity = 0;
         animator = GetComponent<Animator>();
         Reset();
@@ -17,7 +20,7 @@ public class BossFightController : MonoBehaviour
 
     public void Reset()
     {
-        Shader.SetGlobalColor("_GColor",Color.white);    
+        Shader.SetGlobalColor("_GColor", Color.white);
     }
     private void OnEnable()
     {
@@ -29,16 +32,17 @@ public class BossFightController : MonoBehaviour
         Color redCol = new Color(1f, 0.6f, 0.6f, 1f);
         StartCoroutine(setColor(redCol, 2.5f));
         yield return new WaitForSeconds(2.5f);
-        animator.SetTrigger("move");
+        child.gameObject.SetActive(true);
         float bossFightTime = 10f + (float)quantity;
         yield return new WaitForSeconds(bossFightTime);
         quantity++;
         StartCoroutine(setColor(Color.white, 1.5f));
-        animator.SetTrigger("stop");
+        child.gameObject.SetActive(false);
         StartCoroutine(BossFightTimer(40f));
     }
 
-    IEnumerator BossFightTimer(float time) {
+    IEnumerator BossFightTimer(float time)
+    {
         yield return new WaitForSeconds(time);
         StartCoroutine(BossFight());
     }
@@ -47,12 +51,14 @@ public class BossFightController : MonoBehaviour
     {
         Color color = Shader.GetGlobalColor("_GColor");
         float timer = time;
-        while (timer > 0f) {
-            Shader.SetGlobalColor("_GColor", Color.Lerp(toColor, color,  timer / time));
+        while (timer > 0f)
+        {
+            Shader.SetGlobalColor("_GColor", Color.Lerp(toColor, color, timer / time));
             timer -= Time.deltaTime;
             yield return null;
         }
-        if(timer <= 0f) {
+        if (timer <= 0f)
+        {
             Shader.SetGlobalColor("_GColor", toColor);
             yield break;
         }
