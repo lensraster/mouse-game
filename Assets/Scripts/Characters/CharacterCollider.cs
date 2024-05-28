@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
+using UnityEngine.UI;
 
 /// <summary>
 /// Handles everything related to the collider of the character. This is actually an empty game object, NOT on the character prefab
@@ -31,7 +32,13 @@ public class CharacterCollider : MonoBehaviour
 
 	public ParticleSystem koParticle;
 
-	[Header("Sound")]
+	[Header("RandomPowerupImage")]
+	[SerializeField]
+	private Sprite[] powerupImages;
+    [SerializeField]
+    private Image powerupImage;
+
+    [Header("Sound")]
 	public AudioClip coinSound;
 	public AudioClip premiumSound;
 	public AudioClip fartSound;
@@ -104,37 +111,37 @@ public class CharacterCollider : MonoBehaviour
 	}
 
     protected void OnTriggerEnter(Collider c)
-    {
-        if (c.gameObject.layer == k_CoinsLayerIndex)
+	{
+		if (c.gameObject.layer == k_CoinsLayerIndex)
 		{
 			if (magnetCoins.Contains(c.gameObject))
 				magnetCoins.Remove(c.gameObject);
 
 			if (c.GetComponent<Coin>().isPremium)
-            {
+			{
 				Addressables.ReleaseInstance(c.gameObject);
-                PlayerData.instance.premium += 1;
-                controller.premium += 1;
+				PlayerData.instance.premium += 1;
+				controller.premium += 1;
 				m_Audio.PlayOneShot(premiumSound);
 			}
-            else
-            {
+			else
+			{
 				Coin.coinPool.Free(c.gameObject);
-                PlayerData.instance.coins += 1;
+				PlayerData.instance.coins += 1;
 				controller.coins += 1;
 				m_Audio.PlayOneShot(coinSound);
-            }
-        }
-        else if(c.gameObject.layer == k_ObstacleLayerIndex)
-        {
-            if (m_Invincible || controller.IsCheatInvincible())
-                return;
+			}
+		}
+		else if (c.gameObject.layer == k_ObstacleLayerIndex)
+		{
+			if (m_Invincible || controller.IsCheatInvincible())
+				return;
 
-            controller.StopMoving();
+			controller.StopMoving();
 
 			c.enabled = false;
 
-            Obstacle ob = c.gameObject.GetComponent<Obstacle>();
+			Obstacle ob = c.gameObject.GetComponent<Obstacle>();
 
 			if (ob != null)
 			{
@@ -142,27 +149,27 @@ public class CharacterCollider : MonoBehaviour
 			}
 			else
 			{
-			    Addressables.ReleaseInstance(c.gameObject);
+				Addressables.ReleaseInstance(c.gameObject);
 			}
 
-            if (TrackManager.instance.isTutorial)
-            {
-                m_TutorialHitObstacle = true;
-            }
-            else
-            {
+			if (TrackManager.instance.isTutorial)
+			{
+				m_TutorialHitObstacle = true;
+			}
+			else
+			{
 				mathPopup.gameObject.SetActive(true);
-                m_Audio.PlayOneShot(fartSound);
-            }
+				m_Audio.PlayOneShot(fartSound);
+			}
 
-            controller.character.animator.SetTrigger(s_HitHash);
+			controller.character.animator.SetTrigger(s_HitHash);
 
 			if (controller.currentLife > 0)
 			{
 				m_Audio.PlayOneShot(controller.character.hitSound);
-                SetInvincible ();
+				SetInvincible();
 			}
-            // The collision killed the player, record all data to analytics.
+			// The collision killed the player, record all data to analytics.
 			else
 			{
 				m_Audio.PlayOneShot(controller.character.deathSound);
@@ -176,18 +183,28 @@ public class CharacterCollider : MonoBehaviour
 				m_DeathData.worldDistance = controller.trackManager.worldDistance;
 
 			}
-        }
-        else if(c.gameObject.layer == k_PowerupLayerIndex)
-        {
-            Consumable consumable = c.GetComponent<Consumable>();
-            if(consumable != null)
-            {
-                controller.UseConsumable(consumable);
-            }
-        }
-    }
+		}
+		else if (c.gameObject.layer == k_PowerupLayerIndex)
+		{
+			Consumable consumable = c.GetComponent<Consumable>();
+			if (consumable != null)
+			{
+				controller.UseConsumable(consumable);
+			}
 
-    public void SetInvincibleExplicit(bool invincible)
+			IEnumerator showRandomImage()
+			{
+				powerupImage.sprite = powerupImages[Random.Range(0, powerupImages.Length)];
+				powerupImage.gameObject.SetActive(true);
+				yield return new WaitForSeconds(5);
+				powerupImage.gameObject.SetActive(false);
+			}
+
+			StartCoroutine(showRandomImage());
+		}
+	}
+
+	public void SetInvincibleExplicit(bool invincible)
     {
         m_Invincible = invincible;
     }
