@@ -157,9 +157,14 @@ public class CharacterCollider : MonoBehaviour
 				m_TutorialHitObstacle = true;
 			}
 			else
-			{
-				mathPopup.gameObject.SetActive(true);
-				m_Audio.PlayOneShot(fartSound);
+            {
+                m_Audio.PlayOneShot(fartSound);
+				IEnumerator showMathPopup()
+				{
+					yield return new WaitForSeconds(0.5f);
+                    mathPopup.gameObject.SetActive(true);
+                }
+				StartCoroutine(showMathPopup());
 			}
 
 			controller.character.animator.SetTrigger(s_HitHash);
@@ -196,7 +201,7 @@ public class CharacterCollider : MonoBehaviour
 			{
 				powerupImage.sprite = powerupImages[Random.Range(0, powerupImages.Length)];
 				powerupImage.gameObject.SetActive(true);
-				yield return new WaitForSeconds(5);
+				yield return new WaitForSeconds(consumable.duration);
 				powerupImage.gameObject.SetActive(false);
 			}
 

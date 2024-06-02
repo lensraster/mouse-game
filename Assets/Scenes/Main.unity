@@ -14565,14 +14565,16 @@ MonoBehaviour:
   controller: {fileID: 2094493432}
   koParticle: {fileID: 2038194883}
   powerupImages:
-  - {fileID: 21300054, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
-  - {fileID: -1042134108, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
-  - {fileID: 21300062, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
-  - {fileID: 21300012, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+  - {fileID: 21300000, guid: d609e3840ea80434eaa552f53f8d0feb, type: 3}
+  - {fileID: 21300000, guid: 38d8939a9348a964b9bb8ca180301585, type: 3}
+  - {fileID: 21300000, guid: 98289f4f1e836eb4882024abe6d87744, type: 3}
+  - {fileID: 21300000, guid: 73ccdb3076e465b4da915a0da1ef7679, type: 3}
+  - {fileID: 21300000, guid: 8c5370c6324fd054d8a7c35d9c0fa1cf, type: 3}
+  - {fileID: 21300000, guid: b6bfec5d45cfe8f499e34a9ee56889a6, type: 3}
   powerupImage: {fileID: 361929454}
   coinSound: {fileID: 8300000, guid: 62c15b4aac9d60e4a963f4f55d31e706, type: 3}
   premiumSound: {fileID: 8300000, guid: 553f1d03da54003479f6ff63d3155919, type: 3}
-  fartSound: {fileID: 8300000, guid: da190f1c38ed6e14094c0b0351b2f7db, type: 3}
+  fartSound: {fileID: 8300000, guid: 59bf8abd5419ed34bb9efae23c3efa70, type: 3}
   magnetCoins: []
 --- !u!82 &1144878500
 AudioSource:
@@ -15162,8 +15164,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: 1}
-  m_SizeDelta: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.2}
+  m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223329056
 MonoBehaviour:
