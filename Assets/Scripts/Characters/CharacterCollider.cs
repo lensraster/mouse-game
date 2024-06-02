@@ -205,6 +205,7 @@ public class CharacterCollider : MonoBehaviour
 				powerupImage.gameObject.SetActive(false);
 			}
 
+			StopCoroutine(showRandomImage());
 			StartCoroutine(showRandomImage());
 		}
 	}
