@@ -64,53 +64,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 678d462d33ebdd7419400a9476bf6759
-    m_Address: Assets/Scenes/Main.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 66b8e0d49d006dd4cb32d8b0fa444728
-    m_Address: Assets/Scenes/Start.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c81bf86fb95a26446ae42f499fcbc766
-    m_Address: Assets/Scenes/Shop.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
-    m_Address: Assets/Scenes/SampleScene.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3fc1e604c9dbb0241aefbfba2563b297
-    m_Address: Assets/Scenes/RatRT.renderTexture
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 38bda6f3030e73d4785e813cab2a33d4
     m_Address: Assets/Shaders/CurvedCode.cginc
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0999d58022e15764c9c7f1db616452d4
-    m_Address: Assets/Shaders/CurvedRotation.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b9ac761e73263dc46b8b27826e86ee14
-    m_Address: Assets/Shaders/UnlitBlinking.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d63f5eb2904b2b346afd16ebb961ff06
-    m_Address: Assets/Shaders/VertexColor.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 516be8166ab3bd44a9c6dce62765f6d1
-    m_Address: Assets/Shaders/VertexColorSwizzle.shader
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

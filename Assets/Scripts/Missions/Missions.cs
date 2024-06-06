@@ -72,7 +72,7 @@ public class SingleRunMission : MissionBase
 {
     public override void Created()
     {
-        float[] maxValues = { 500, 1000, 1500, 2000 };
+        float[] maxValues = { 250, 500, 750, 1000 };
         int choosenVal = Random.Range(0, maxValues.Length);
 
         reward = choosenVal + 1;
@@ -112,7 +112,7 @@ public class PickupMission : MissionBase
 
     public override void Created()
     {
-        float[] maxValues = { 1000, 2000, 3000, 4000 };
+        float[] maxValues = { 500, 1000, 1500, 2000 };
         int choosen = Random.Range(0, maxValues.Length);
 
         max = maxValues[choosen];
@@ -154,7 +154,7 @@ public class BarrierJumpMission : MissionBase
     
     public override void Created()
     {
-        float[] maxValues = { 20, 50, 75, 100 };
+        float[] maxValues = { 10, 25, 40, 60 };
         int choosen = Random.Range(0, maxValues.Length);
 
         max = maxValues[choosen];
@@ -211,7 +211,7 @@ public class SlidingMission : MissionBase
 
     public override void Created()
     {
-        float[] maxValues = { 20, 30, 75, 150};
+        float[] maxValues = { 10, 25, 40, 60};
         int choosen = Random.Range(0, maxValues.Length);
 
         reward = choosen + 1;
@@ -255,7 +255,7 @@ public class MultiplierMission : MissionBase
 
 	public override void Created()
     {
-        float[] maxValue = { 3, 5, 8, 10 };
+        float[] maxValue = { 2, 3, 5, 8 };
         int choosen = Random.Range(0, maxValue.Length);
 
         max = maxValue[choosen];
