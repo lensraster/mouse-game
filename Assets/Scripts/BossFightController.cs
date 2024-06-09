@@ -13,15 +13,15 @@ public class BossFightController : MonoBehaviour
     [SerializeField] float firstSpeed = 12;
     [SerializeField] int scoreStep = 10;
     [SerializeField] float speedStep = 2;
+    [SerializeField] GameObject boss;
+    [SerializeField] ParticleSystem poof;
 
     int scoreNeeded;
     float speedNeeded;
     bool bossFightStarted;
 
-    Animator animator;
     void Start()
     {
-        animator = GetComponent<Animator>();
         scoreText.gameObject.SetActive(false);
         Reset();
     }
@@ -34,14 +34,16 @@ public class BossFightController : MonoBehaviour
         scoreNeeded = firstScore;
         speedNeeded = firstSpeed;
         bossFightStarted = false;
+        boss.SetActive(false);
     }
 
     IEnumerator StartBossFight()
     {
         StartCoroutine(setColor(true, 1.2f));
         yield return new WaitForSeconds(1.2f);
-        animator.SetTrigger("move");
+        boss.SetActive(true);
         scoreText.gameObject.SetActive(true);
+        poof.Play();
         int initScore = charController.coins;
         StartCoroutine(BossFight(initScore));
         yield break;
@@ -56,6 +58,7 @@ public class BossFightController : MonoBehaviour
       //      Debug.Log("while shoto" + (charController.coins - initScore).ToString());
             int score = charController.coins - initScore;
             scoreText.text = score + " / " + scoreNeeded;
+            poof.transform.position = boss.transform.position;
             yield return null;
         }
         if((charController.coins - initScore) >= scoreNeeded)
@@ -70,7 +73,8 @@ public class BossFightController : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         StartCoroutine(setColor(false, 1.2f));
         yield return new WaitForSeconds(1.2f);
-        animator.SetTrigger("stop");
+        boss.SetActive(false);
+        poof.Play();
         scoreNeeded += scoreStep;
         speedNeeded += speedStep;
         trackManager.ContinueAcceleration();
