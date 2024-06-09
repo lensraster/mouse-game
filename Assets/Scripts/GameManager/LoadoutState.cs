@@ -46,7 +46,7 @@ public class LoadoutState : AState
     public GameObject tutorialBlocker;
     public GameObject tutorialPrompt;
 
-	public MeshFilter skyMeshFilter;
+	// public MeshFilter skyMeshFilter;
     public MeshFilter UIGroundFilter;
 
 	public AudioClip menuTheme;
@@ -84,7 +84,7 @@ public class LoadoutState : AState
 
         k_UILayer = LayerMask.NameToLayer("UI");
 
-        skyMeshFilter.gameObject.SetActive(true);
+        // skyMeshFilter.gameObject.SetActive(true);
         UIGroundFilter.gameObject.SetActive(true);
 
         // Reseting the global blinking value. Can happen if the game unexpectedly exited while still blinking
@@ -118,7 +118,7 @@ public class LoadoutState : AState
 
         GameState gs = to as GameState;
 
-        skyMeshFilter.gameObject.SetActive(false);
+        // skyMeshFilter.gameObject.SetActive(false);
         UIGroundFilter.gameObject.SetActive(false);
 
         if (gs != null)
@@ -231,7 +231,7 @@ public class LoadoutState : AState
         themeNameDisplay.text = t.themeName;
 		themeIcon.sprite = t.themeIcon;
 
-		skyMeshFilter.sharedMesh = t.skyMesh;
+		// skyMeshFilter.sharedMesh = t.skyMesh;
         UIGroundFilter.sharedMesh = t.UIGroundMesh;
 	}
 

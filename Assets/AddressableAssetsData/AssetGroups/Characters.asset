@@ -69,6 +69,37 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b44b7f4377007c74bb57a772fd4b7a46
+    m_Address: Assets/EpiXR Monsters/Monster4-6/Monster 5/Materials/Color4.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ef2fb7bb60da994fa715b7e7da769b7
+    m_Address: Assets/EpiXR Monsters/Monster4-6/Monster 5/Fbx/monster 5.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bfa4104d8cc7db4faab989044bf91e4
+    m_Address: Assets/EpiXR Monsters/Monster4-6/Monster 5/Textures/Monster 5 Texture
+      _Red.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44c571f6c5816644b9e7731444dac7e8
+    m_Address: Assets/Materials/Cheese.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c814ab3aeebe54547be6eafd9be1cd78
+    m_Address: Assets/Shaders/CurvedRotationInverted.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1e84f069bd3a6d44ba8070fba940ec8
+    m_Address: Assets/Materials/Sky.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
   m_SchemaSet:
