@@ -14404,6 +14404,7 @@ Transform:
   - {fileID: 282491579}
   - {fileID: 1934942588}
   - {fileID: 77069732}
+  - {fileID: 1998278802}
   m_Father: {fileID: 2094493433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1144878497
@@ -22534,7 +22535,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 4
+  far clip plane: 6
   field of view: 37.2
   orthographic: 0
   orthographic size: 5
@@ -25727,6 +25728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d821452c0a8440445938db2f4b1c0f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1955886296 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1469854183030809781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1957119029
 GameObject:
   m_ObjectHideFlags: 0
@@ -26297,6 +26304,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984826506}
   m_CullTransparentMesh: 0
+--- !u!1 &1998278801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998278802}
+  m_Layer: 0
+  m_Name: TargetBossFight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998278802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998278801}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1144878496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2001643350
 GameObject:
   m_ObjectHideFlags: 0
@@ -26958,13 +26996,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 0
   m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 0001030405
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -31760,6 +31800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1955886296}
   - {fileID: 1144878496}
   - {fileID: 184212907}
   - {fileID: 630422118}
@@ -32590,8 +32631,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2094493433}
     m_Modifications:
+    - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32605,7 +32661,7 @@ PrefabInstance:
     - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
@@ -32642,6 +32698,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 312415063807639083, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5920011225323959728, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1998278802}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: speedStep
@@ -32696,4 +32762,3 @@ SceneRoots:
   - {fileID: 2094493433}
   - {fileID: 1916993085}
   - {fileID: 162371111}
-  - {fileID: 1469854183030809781}
