@@ -49,7 +49,7 @@ public class TrackManager : MonoBehaviour
 
     [Header("Objects")]
     public ConsumableDatabase consumableDatabase;
-    public MeshFilter skyMeshFilter;
+    // public MeshFilter skyMeshFilter;
 
     [Header("Parallax")]
     public Transform parallaxRoot;
@@ -225,7 +225,7 @@ public class TrackManager : MonoBehaviour
             m_CurrentZone = 0;
             m_CurrentZoneDistance = 0;
 
-            skyMeshFilter.sharedMesh = m_CurrentThemeData.skyMesh;
+            // skyMeshFilter.sharedMesh = m_CurrentThemeData.skyMesh;
             RenderSettings.fogColor = m_CurrentThemeData.fogColor;
             RenderSettings.fog = true;
 
