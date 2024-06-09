@@ -11,6 +11,7 @@ public class MenuRatAnimController : MonoBehaviour
     {
         poses = 0;
         Shader.SetGlobalColor("_GColor", Color.white);
+        Shader.SetGlobalFloat("_Inverted", 0f);
        StartCoroutine(animatorCoroutine(poses));
     }
     public void SetIdleTimer()

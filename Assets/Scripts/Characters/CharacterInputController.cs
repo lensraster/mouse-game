@@ -13,7 +13,7 @@ public class CharacterInputController : MonoBehaviour
 	static int s_JumpingHash = Animator.StringToHash("Jumping");
 	static int s_JumpingSpeedHash = Animator.StringToHash("JumpSpeed");
 	static int s_SlidingHash = Animator.StringToHash("Sliding");
-
+	public BossFightController bossFightController;
 	public TrackManager trackManager;
 	public Character character;
 	public CharacterCollider characterCollider;
