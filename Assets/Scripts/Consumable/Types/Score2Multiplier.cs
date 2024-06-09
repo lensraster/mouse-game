@@ -16,7 +16,7 @@ public class Score2Multiplier : Consumable
 
     public override int GetPrice()
     {
-        return 750;
+        return 500;
     }
 
 	public override int GetPremiumCost()
