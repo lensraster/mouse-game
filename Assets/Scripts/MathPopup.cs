@@ -47,19 +47,51 @@ public class MathPopup : MonoBehaviour
         return answer1;
     }
 
+    private OperandsAnswer GenerateMultOp()
+    {
+        int A = UnityEngine.Random.Range(1, 9);
+        int B = UnityEngine.Random.Range(1, 9);
+        OperandsAnswer answer1 = new OperandsAnswer();
+        answer1.A = A;
+        answer1.B = B;
+        answer1.answer = A * B;
+        return answer1;
+    }
+    private OperandsAnswer GenerateDivOp()
+    {
+        int answer = UnityEngine.Random.Range(1, 9);
+        int divider = UnityEngine.Random.Range(1, 9);
+        int mult = answer * divider;
+        OperandsAnswer answer1 = new OperandsAnswer();
+        answer1.A = mult;
+        answer1.B = divider;
+        answer1.answer = answer;
+        return answer1;
+    }
+
     private void GenerateQuestion () {
 
-        OperandsAnswer[] questions = new OperandsAnswer[3];
+        OperandsAnswer[] questions = new OperandsAnswer[3]; 
         float rand = Random.Range(0.0f, 1.0f);
-        if(rand < 0.5)
+        if(rand < 0.25)
         {
             questions = generateQuestions(0);
                 operands[2].text = "+";
         }
-        else
+        else if(rand < 0.5)
         {
             questions = generateQuestions(1);
-            operands[2].text = "-";
+                operands[2].text = "-";
+        }
+        else if(rand < 0.75)
+        {
+            questions = generateQuestions(2);
+                operands[2].text = "*";
+        }
+        else
+        {
+            questions = generateQuestions(3);
+            operands[2].text = "/";
         }
         correctAnswer = Random.Range(0, 2);
 
@@ -71,6 +103,7 @@ public class MathPopup : MonoBehaviour
         operands[1].text = questions[correctAnswer].B.ToString();
     }
 
+
     OperandsAnswer[] generateQuestions(int op)
     {
         List<OperandsAnswer> operands = new List<OperandsAnswer>();
@@ -78,9 +111,20 @@ public class MathPopup : MonoBehaviour
         while(operands.Count < 3)
         {
             OperandsAnswer check = new OperandsAnswer();
-            if (op == 0) check = GenerateAddOp();
-            if (op == 1) check = GenerateSubOp();
-            if (!answers.Contains(check.answer)) { answers.Add(check.answer); operands.Add(check); }
+            switch(op) {
+                case 0:
+                    check = GenerateAddOp(); break;
+                case 1:
+                    check = GenerateSubOp(); break;
+                case 2:
+                    check = GenerateMultOp(); break;
+                case 3:
+                    check = GenerateDivOp(); break;
+            }
+            if (!answers.Contains(check.answer)) {
+                answers.Add(check.answer);
+                operands.Add(check);
+            }
         }
 
         return operands.ToArray();
