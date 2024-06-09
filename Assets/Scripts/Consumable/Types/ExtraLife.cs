@@ -19,7 +19,7 @@ public class ExtraLife : Consumable
 
     public override int GetPrice()
     {
-        return 1400;
+        return 2000;
     }
 
 	public override int GetPremiumCost()
