@@ -29,27 +29,6 @@ public class MathPopup : MonoBehaviour
         answer1.answer = A + B;
         return answer1;
     }
-    private OperandsAnswer GenerateMultOp()
-    {
-        int A = UnityEngine.Random.Range(1, 9);
-        int B = UnityEngine.Random.Range(1, 9);
-        OperandsAnswer answer1 = new OperandsAnswer();
-        answer1.A = A;
-        answer1.B = B;
-        answer1.answer = A * B;
-        return answer1;
-    }
-    private OperandsAnswer GenerateDivOp()
-    {
-        int answer = UnityEngine.Random.Range(1, 9);
-        int divider = UnityEngine.Random.Range(1, 9);
-        int mult = answer * divider;
-        OperandsAnswer answer1 = new OperandsAnswer();
-        answer1.A = mult;
-        answer1.B = divider;
-        answer1.answer = answer;
-        return answer1;
-    }
 
     private OperandsAnswer GenerateSubOp()
     {
@@ -70,27 +49,17 @@ public class MathPopup : MonoBehaviour
 
     private void GenerateQuestion () {
 
-        OperandsAnswer[] questions = new OperandsAnswer[3]; 
+        OperandsAnswer[] questions = new OperandsAnswer[3];
         float rand = Random.Range(0.0f, 1.0f);
-        if(rand < 0.25)
+        if(rand < 0.5)
         {
             questions = generateQuestions(0);
                 operands[2].text = "+";
         }
-        else if(rand < 0.5)
-        {
-            questions = generateQuestions(1);
-                operands[2].text = "-";
-        }
-        else if(rand < 0.75)
-        {
-            questions = generateQuestions(2);
-                operands[2].text = "*";
-        }
         else
         {
-            questions = generateQuestions(3);
-            operands[2].text = "/";
+            questions = generateQuestions(1);
+            operands[2].text = "-";
         }
         correctAnswer = Random.Range(0, 2);
 
@@ -109,16 +78,8 @@ public class MathPopup : MonoBehaviour
         while(operands.Count < 3)
         {
             OperandsAnswer check = new OperandsAnswer();
-            switch(op) {
-                case 0:
-                    check = GenerateAddOp(); break;
-                case 1:
-                    check = GenerateSubOp(); break;
-                case 2:
-                    check = GenerateMultOp(); break;
-                case 3:
-                    check = GenerateDivOp(); break;
-            }
+            if (op == 0) check = GenerateAddOp();
+            if (op == 1) check = GenerateSubOp();
             if (!answers.Contains(check.answer)) { answers.Add(check.answer); operands.Add(check); }
         }
 
@@ -134,23 +95,12 @@ public class MathPopup : MonoBehaviour
         else StartCoroutine(showResult(1));
     }
 
-    private void Win() {
-        
-        Finish();
-    }
-    private void Lose() {
-
-        controller.currentLife--;
-        Finish();
-    }
-    private void Late() { 
-
-        controller.currentLife--;
-        Finish();
-    }
-
-    private void Finish() {
-        controller.trackManager.StartMove(false);
+    private void Finish(bool win) {
+        if (!win) { 
+            controller.currentLife--;
+            controller.bossFightController.Reset();
+                }
+        controller.trackManager.StartMove(!win); 
         AudioListener.pause = false;
         Time.timeScale = 1;
         StopAllCoroutines();
@@ -246,11 +196,11 @@ public class MathPopup : MonoBehaviour
         switch (result)
         {
             case 0:
-                Win(); break;
+                Finish(true); break;
             case 1:
-                Lose(); break;
+                Finish(false); break;
             case 2:
-                Late(); break;
+                Finish(false); break;
         }
 
     }

@@ -26,8 +26,6 @@ public class GameState : AState
 
 	public AudioClip gameTheme;
 
-    public BossFightController bossController;
-
     [Header("UI")]
     public Text coinText;
     public Text premiumText;

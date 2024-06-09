@@ -16,7 +16,7 @@ public class Invincibility : Consumable
 
     public override int GetPrice()
     {
-        return 1000;
+        return 1500;
     }
 
 	public override int GetPremiumCost()

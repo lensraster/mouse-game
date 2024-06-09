@@ -14,6 +14,7 @@ public class CharacterInputController : MonoBehaviour
 	static int s_JumpingSpeedHash = Animator.StringToHash("JumpSpeed");
 	static int s_SlidingHash = Animator.StringToHash("Sliding");
 
+	public BossFightController bossFightController;
 	public TrackManager trackManager;
 	public Character character;
 	public CharacterCollider characterCollider;
@@ -177,6 +178,7 @@ public class CharacterInputController : MonoBehaviour
 
 	protected void Update ()
     {
+#if UNITY_EDITOR || UNITY_STANDALONE
         // Use key input in editor or standalone
         // disabled if it's tutorial and not thecurrent right tutorial level (see func TutorialMoveCheck)
 
@@ -197,7 +199,7 @@ public class CharacterInputController : MonoBehaviour
 			if(!m_Sliding)
 				Slide();
 		}
-
+#else
         // Use touch input on mobile
         if (Input.touchCount == 1)
         {
@@ -250,6 +252,7 @@ public class CharacterInputController : MonoBehaviour
 				m_IsSwiping = false;
 			}
         }
+#endif
 
         Vector3 verticalTargetPosition = m_TargetPosition;
 

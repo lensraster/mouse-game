@@ -94,7 +94,8 @@ public class TrackManager : MonoBehaviour
     protected float m_CurrentSegmentDistance;
     protected float m_TotalWorldDistance;
     protected bool m_IsMoving;
-    protected float m_Speed;
+    [SerializeField] private float m_Speed;
+ // private  protected float m_Speed;
 
     protected float m_TimeSincePowerup;     // The higher it goes, the higher the chance of spawning one
     protected float m_TimeSinceLastPremium;
@@ -137,6 +138,7 @@ public class TrackManager : MonoBehaviour
 
     public void StartMove(bool isRestart = true)
     {
+        Debug.Log("start move with restart" + isRestart);
         characterController.StartMoving();
         m_IsMoving = true;
         if (isRestart)
@@ -673,5 +675,22 @@ public class TrackManager : MonoBehaviour
     {
         int finalAmount = amount;
         m_Score += finalAmount * m_Multiplier;
+    }
+
+    private IEnumerator pauseAcceleration() {
+        float startSpeed = m_Speed;
+        while (true)
+        {
+            m_Speed = startSpeed;
+            yield return null;
+        }
+    }
+
+    Coroutine pauseAccel;
+    public void StopAcceleration() {
+        pauseAccel = StartCoroutine(pauseAcceleration());
+    }
+    public void ContinueAcceleration() {
+        StopCoroutine(pauseAccel);
     }
 }
