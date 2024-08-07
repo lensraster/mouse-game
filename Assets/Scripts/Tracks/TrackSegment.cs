@@ -83,8 +83,8 @@ public class TrackSegment : MonoBehaviour
     }
 
 	public void Cleanup()
-    {
-        while (collectibleTransform.childCount > 0)
+	{
+		while(collectibleTransform.childCount > 0)
 		{
 			Transform t = collectibleTransform.GetChild(0);
 			t.SetParent(null);

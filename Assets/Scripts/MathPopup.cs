@@ -29,6 +29,24 @@ public class MathPopup : MonoBehaviour
         answer1.answer = A + B;
         return answer1;
     }
+
+    private OperandsAnswer GenerateSubOp()
+    {
+        int A = UnityEngine.Random.Range(30, 60);
+        int B = UnityEngine.Random.Range(2, 25);
+        int answer = A - B;
+        if(answer <= 0)
+        {
+            B -= answer;
+        }
+        answer = A - B;
+        OperandsAnswer answer1 = new OperandsAnswer();
+        answer1.A = A;
+        answer1.B = B;
+        answer1.answer = answer;
+        return answer1;
+    }
+
     private OperandsAnswer GenerateMultOp()
     {
         int A = UnityEngine.Random.Range(1, 9);
@@ -47,23 +65,6 @@ public class MathPopup : MonoBehaviour
         OperandsAnswer answer1 = new OperandsAnswer();
         answer1.A = mult;
         answer1.B = divider;
-        answer1.answer = answer;
-        return answer1;
-    }
-
-    private OperandsAnswer GenerateSubOp()
-    {
-        int A = UnityEngine.Random.Range(30, 60);
-        int B = UnityEngine.Random.Range(2, 25);
-        int answer = A - B;
-        if(answer <= 0)
-        {
-            B -= answer;
-        }
-        answer = A - B;
-        OperandsAnswer answer1 = new OperandsAnswer();
-        answer1.A = A;
-        answer1.B = B;
         answer1.answer = answer;
         return answer1;
     }
@@ -102,6 +103,7 @@ public class MathPopup : MonoBehaviour
         operands[1].text = questions[correctAnswer].B.ToString();
     }
 
+
     OperandsAnswer[] generateQuestions(int op)
     {
         List<OperandsAnswer> operands = new List<OperandsAnswer>();
@@ -119,7 +121,10 @@ public class MathPopup : MonoBehaviour
                 case 3:
                     check = GenerateDivOp(); break;
             }
-            if (!answers.Contains(check.answer)) { answers.Add(check.answer); operands.Add(check); }
+            if (!answers.Contains(check.answer)) {
+                answers.Add(check.answer);
+                operands.Add(check);
+            }
         }
 
         return operands.ToArray();
@@ -134,23 +139,12 @@ public class MathPopup : MonoBehaviour
         else StartCoroutine(showResult(1));
     }
 
-    private void Win() {
-        
-        Finish();
-    }
-    private void Lose() {
-
-        controller.currentLife--;
-        Finish();
-    }
-    private void Late() { 
-
-        controller.currentLife--;
-        Finish();
-    }
-
-    private void Finish() {
-        controller.trackManager.StartMove(false);
+    private void Finish(bool win) {
+        if (!win) { 
+            controller.currentLife--;
+            controller.bossFightController.Reset();
+                }
+        controller.trackManager.StartMove(!win); 
         AudioListener.pause = false;
         Time.timeScale = 1;
         StopAllCoroutines();
@@ -246,11 +240,11 @@ public class MathPopup : MonoBehaviour
         switch (result)
         {
             case 0:
-                Win(); break;
+                Finish(true); break;
             case 1:
-                Lose(); break;
+                Finish(false); break;
             case 2:
-                Late(); break;
+                Finish(false); break;
         }
 
     }

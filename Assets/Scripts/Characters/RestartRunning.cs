@@ -6,11 +6,12 @@ public class RestartRunning : StateMachineBehaviour
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+    //    Debug.Log("tyt? OnStateExit i animator yaris");
         // We don't restart if we go toward the death state
         if (animator.GetBool(s_DeadHash))
             return; 
         
-        TrackManager.instance.StartMove();
+        TrackManager.instance.StartMove(false);
     }
 
 }
