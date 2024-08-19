@@ -10,9 +10,9 @@ public class BossFightController : MonoBehaviour
     [SerializeField] CharacterInputController charController;
     [SerializeField] Text scoreText;
     [SerializeField] int firstScore = 20;
-    [SerializeField] float firstSpeed = 12;
+    [SerializeField] float firstSpeed = 20;
     [SerializeField] int scoreStep = 10;
-    [SerializeField] float speedStep = 2;
+    [SerializeField] float speedStep = 15;
     [SerializeField] GameObject boss;
     [SerializeField] ParticleSystem poof;
 
@@ -23,11 +23,11 @@ public class BossFightController : MonoBehaviour
     void Start()
     {
         scoreText.gameObject.SetActive(false);
-        Reset();
+        ResetStates();
     }
 
 
-    public void Reset()
+    public void ResetStates()
     {
         Shader.SetGlobalColor("_GColor",Color.white);    
         Shader.SetGlobalFloat("_Inverted",0f);

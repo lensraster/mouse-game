@@ -142,7 +142,7 @@ public class MathPopup : MonoBehaviour
     private void Finish(bool win) {
         if (!win) { 
             controller.currentLife--;
-            controller.bossFightController.Reset();
+            controller.bossFightController.ResetStates();
                 }
         controller.trackManager.StartMove(!win); 
         AudioListener.pause = false;
