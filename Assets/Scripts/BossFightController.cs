@@ -61,7 +61,7 @@ public class BossFightController : MonoBehaviour
             poof.transform.position = boss.transform.position;
             yield return null;
         }
-        if((charController.coins - initScore) >= scoreNeeded || !trackManager.isMoving)
+        if(!trackManager.isMoving)
         {
         //    Debug.Log("finish coroutine");
             StartCoroutine(FinishBossFight());

@@ -32906,8 +32906,13 @@ PrefabInstance:
       objectReference: {fileID: 1998278802}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
+      propertyPath: scoreStep
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
       propertyPath: speedStep
-      value: 2
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
@@ -32917,7 +32922,7 @@ PrefabInstance:
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: firstSpeed
-      value: 13
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
