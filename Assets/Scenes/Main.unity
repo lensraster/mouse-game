@@ -14397,9 +14397,10 @@ MonoBehaviour:
   controller: {fileID: 2094493432}
   koParticle: {fileID: 2038194883}
   powerupImages:
-  - {fileID: 21300000, guid: d609e3840ea80434eaa552f53f8d0feb, type: 3}
-  - {fileID: 21300000, guid: 38d8939a9348a964b9bb8ca180301585, type: 3}
-  - {fileID: 21300000, guid: 98289f4f1e836eb4882024abe6d87744, type: 3}
+  - {fileID: 21300000, guid: 646616950bdfdbd41ad53dfea68b9ab4, type: 3}
+  - {fileID: 21300000, guid: 7371e1b3e1c485f449750b2ca6f8e23d, type: 3}
+  - {fileID: 21300000, guid: e56d31c11c2971743b264e67da7fcd37, type: 3}
+  - {fileID: 21300000, guid: 2fcf991fc1d5b5546bec786e2d501800, type: 3}
   powerupImage: {fileID: 1840382925}
   coinSound: {fileID: 8300000, guid: 62c15b4aac9d60e4a963f4f55d31e706, type: 3}
   premiumSound: {fileID: 8300000, guid: 553f1d03da54003479f6ff63d3155919, type: 3}

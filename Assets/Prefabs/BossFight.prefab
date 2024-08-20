@@ -248,7 +248,7 @@ MonoBehaviour:
   charController: {fileID: 0}
   scoreText: {fileID: 803284271870975771}
   firstScore: 20
-  firstSpeed: 12
+  firstSpeed: 13
   scoreStep: 10
   speedStep: 2
   boss: {fileID: 5789121323302327353}
