@@ -32888,6 +32888,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2553065864615907117, guid: b5a800daa31a0854ebe8a673fe55a7d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5789121323302327353, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: m_IsActive
@@ -32901,7 +32906,7 @@ PrefabInstance:
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: speedStep
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
@@ -32911,7 +32916,7 @@ PrefabInstance:
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}
       propertyPath: firstSpeed
-      value: 18
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6658224528684074425, guid: b5a800daa31a0854ebe8a673fe55a7d9,
         type: 3}

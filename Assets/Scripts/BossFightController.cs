@@ -53,7 +53,7 @@ public class BossFightController : MonoBehaviour
     IEnumerator BossFight(int initScore) {
 
       //  Debug.Log("StartBossFight. score: " + initScore);
-        while((charController.coins - initScore) < scoreNeeded)
+        while((charController.coins - initScore) < scoreNeeded && trackManager.isMoving)
         {
       //      Debug.Log("while shoto" + (charController.coins - initScore).ToString());
             int score = charController.coins - initScore;
@@ -61,7 +61,7 @@ public class BossFightController : MonoBehaviour
             poof.transform.position = boss.transform.position;
             yield return null;
         }
-        if((charController.coins - initScore) >= scoreNeeded)
+        if((charController.coins - initScore) >= scoreNeeded || !trackManager.isMoving)
         {
         //    Debug.Log("finish coroutine");
             StartCoroutine(FinishBossFight());
@@ -69,7 +69,7 @@ public class BossFightController : MonoBehaviour
         }
     }
 
-    IEnumerator FinishBossFight() {
+    public IEnumerator FinishBossFight() {
         scoreText.gameObject.SetActive(false);
         StartCoroutine(setColor(false, 1.2f));
         yield return new WaitForSeconds(1.2f);
