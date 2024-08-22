@@ -158,7 +158,8 @@ public class CharacterCollider : MonoBehaviour
 			}
 			else
             {
-                m_Audio.PlayOneShot(fartSound);
+				m_Audio.ignoreListenerPause = true;
+				m_Audio.PlayOneShot(fartSound);
 				IEnumerator showMathPopup()
 				{
 					yield return new WaitForSeconds(0.5f);
