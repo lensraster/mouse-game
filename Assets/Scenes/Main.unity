@@ -1122,8 +1122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 197}
-  m_SizeDelta: {x: 800, y: 800}
+  m_AnchoredPosition: {x: 0, y: 293.146}
+  m_SizeDelta: {x: 517.0121, y: 517.0121}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62211973
 MonoBehaviour:
@@ -7512,7 +7512,7 @@ Transform:
   m_GameObject: {fileID: 698102928}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.04, y: 0, z: -0.049}
+  m_LocalPosition: {x: 0.04, y: -0.3, z: -0.049}
   m_LocalScale: {x: 0.437268, y: 0.437268, z: 0.437268}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -10654,17 +10654,17 @@ PrefabInstance:
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.91161
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.91161
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.91161
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
@@ -10674,7 +10674,7 @@ PrefabInstance:
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
@@ -10715,6 +10715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009967250978299711, guid: db84173b828e49d408841a59a43eea71,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1012246630288225989, guid: db84173b828e49d408841a59a43eea71,
         type: 3}
